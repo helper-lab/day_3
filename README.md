@@ -56,6 +56,7 @@ in the workspace in the upper left (File>>New>>Terminal).
 4. Start the actual application. 
   - First, you need to source the environment for OpenVINO *in the new terminal*:
     - `source /opt/intel/openvino/bin/setupvars.sh -pyver 3.5`
+    - `python3 app.py | ffmpeg -v warning -f rawvideo -pixel_format bgr24 -video_size 1280x720 -framerate 24 -i - http://0.0.0.0:3004/fac.ffm`
   - To run the app, I'll give you two items to pipe in with `ffmpeg` here, with the rest up to you:
     - `-video_size 1280x720`
     - `-i - http://0.0.0.0:3004/fac.ffm`
