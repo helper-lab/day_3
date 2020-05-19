@@ -26,7 +26,7 @@ Your tasks are to:
 
 Note: Since you are given the MQTT Broker Server and Node Server for the UI, you need 
 certain information to correctly configure, publish and subscribe with MQTT.
-- The MQTT port to use is 3001 - the classroom workspace only allows ports 3000-3009
+- The MQTT port to use is 3001
 - The topics that the UI Node Server is listening to are "class" and "speedometer"
 - The Node Server will attempt to extract information from any JSON received from the MQTT server with the keys "class_names" and "speed"
 
@@ -63,5 +63,3 @@ in the workspace in the upper left (File>>New>>Terminal).
 
 Your app should begin running, and you should also see the MQTT broker server noting
 information getting published.
-
-In order to view the output, click on the "Open App" button below in the workspace.
