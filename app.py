@@ -11,7 +11,7 @@ import sys
 
 INPUT_STREAM = "test_video.mp4"
 CPU_EXTENSION = "/opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so"
-ADAS_MODEL = "/home/workspace/models/semantic-segmentation-adas-0001.xml"
+ADAS_MODEL = "/home/sensors/PycharmProjects/Exercises/day_3/models/semantic-segmentation-adas-0001.xml"
 
 
 CLASSES = ['road', 'sidewalk', 'building', 'wall', 'fence', 'pole', 
