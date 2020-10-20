@@ -8,6 +8,8 @@ from inference import Network
 ### TODO: Import any libraries for MQTT and FFmpeg
 import paho.mqtt.client as mqtt
 import sys
+### TODO: import library to calculate RAM, CPU, FPS
+
 
 INPUT_STREAM = "test_video.mp4"
 CPU_EXTENSION = "/opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so"
@@ -106,6 +108,9 @@ def infer_on_video(args, model):
             result = plugin.extract_output()
             # Draw the output mask onto the input
             out_frame, classes = draw_masks(result, width, height)
+            
+            ### TODO: calculate FPS and draw over the image
+            
             class_names = get_class_names(classes)
             speed = randint(50,70)
             
@@ -114,7 +119,9 @@ def infer_on_video(args, model):
             ### "speedometer" topic. Additionally, it expects "class_names"
             ### and "speed" as the json keys of the data, respectively.
             client.publish("class", json.dumps({"class_names": class_names}))
-            client.publish("speedometer", json.dumps({"speed": speed}))
+            
+            ### TODO: calculate CPU, RAM and publish them
+
 
         ### TODO: Send frame to the ffmpeg server
         sys.stdout.buffer.write(out_frame)
